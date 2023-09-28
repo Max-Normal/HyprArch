@@ -1,0 +1,3 @@
+#!/bin/sh
+
+notify-send "$(acpi -b |grep 1)"
