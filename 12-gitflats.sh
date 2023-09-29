@@ -50,8 +50,6 @@ flatpak install flathub com.github.tchx84.Flatseal
 
 flatpak install flathub com.discordapp.Discord
 
-flatpak install flathub com.parsecgaming.parsec
-
 git clone https://github.com/AdnanHodzic/auto-cpufreq.git
 cd auto-cpufreq && sudo ./auto-cpufreq-installer
 
