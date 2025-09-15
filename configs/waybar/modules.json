@@ -1,0 +1,250 @@
+//  __  __           _       _            
+// |  \/  | ___   __| |_   _| | ___  ___  
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __| 
+// | |  | | (_) | (_| | |_| | |  __/\__ \ 
+// |_|  |_|\___/ \__,_|\__,_|_|\___||___/ 
+//                                        
+//  
+// by Stephan Raabe (2023) 
+// ----------------------------------------------------- 
+//
+{
+    // Workspaces
+    "hyprland/workspaces" : {
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+			"urgent": "",
+			"active": "",
+			"default": ""
+        },
+        "persistent_workspaces": {
+             "*": 5
+        }       
+    },
+
+    // Taskbar
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+           
+        ],
+        "app_ids-mapping": {
+            "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+            "Foot Server": "Terminal"
+        }
+    },
+
+    // Hyprland Window
+    "hyprland/window": {
+        "rewrite": {
+            "(.*) - Brave": "$1",
+            "(.*) - Chromium": "$1",
+            "(.*) - Brave Search": "$1",
+            "(.*) - Outlook": "$1",
+            "(.*) Microsoft Teams": "$1"
+        },
+        "separate-outputs": true
+    },
+
+    // Updates Count
+    "custom/updates": {
+        "format": "  {}",
+        "tooltip-format": "{}",
+        "escape": true,
+        "return-type": "json",       
+        "exec": "~/.local/scripts/updates.sh",
+        "restart-interval": 60,
+        "on-click": "alacritty -e ~/.local/scripts/installupdates.sh",
+        "tooltip": false
+    },
+
+    // RDP Launcher
+    "custom/rdp": {
+        "format": "󰢹",
+        "on-click": "~/.local/scripts/remote.sh",
+        "tooltip": false
+    },
+
+    // Clipboard Manager Launcher
+    "custom/cliphist": {
+        "format": "󰨸",
+        "on-click": "~/.local/scripts/cliphist.sh",
+        "tooltip": false
+    },
+
+    // Windows Launcher
+    "custom/windows": {
+        "format": "",
+        "on-click": "~/.local/scripts/launchvm.sh",
+        "tooltip": false
+    },
+
+    // Chromium Launcher
+    "custom/chromium": {
+        "format": "",
+        "on-click": "chromium",
+        "tooltip": false
+    },
+
+    // ChatGPT Launcher
+    "custom/chatgpt": {
+        "format": "",
+        "on-click": "brave --app=https://chat.openai.com",
+        "tooltip": false
+    },
+
+    // Rofi Calculator
+    "custom/calculator": {
+        "format": "",
+        "on-click": "~/.local/scripts/calculator.sh",
+        "tooltip": false
+    },
+
+    // Parsec Launcher
+    "custom/parsec": {
+        "format": "󰮯",
+        "on-click": "~/.local/scripts/parsec.sh",
+        "tooltip": false
+    },
+
+    // Rofi Application Launcher
+    "custom/appmenu": {
+        "format": "Apps",
+        "on-click": "~/.config/rofi/launchers/type-2/launcher.sh",
+        "tooltip": false
+    },
+
+    // Power Menu
+    "custom/exit": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
+    // Keyboard State
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    // System tray
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    // Clock
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+
+
+    // CPU
+    "cpu": {
+        "format": "/   {usage}% "
+    },
+
+    // Memory
+    "memory": {
+        "format": "/ 󰘚  {}% "
+    },
+
+    // Harddisc space used
+    "disk": {
+        "interval": 30,
+        "format": "󰋊  {percentage_used}% ",
+        "path": "/"
+    }, 
+    
+    // Network
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "   WiFi",
+        "format-ethernet": " LAN",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": " {ifname} via {gwaddri}",
+        "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+    	"on-click": "nm-connection-editor"
+    },
+
+    // Battery
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}   {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{icon}  {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+
+    // Pulseaudio
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format-bluetooth-muted": " {icon}  {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", " ", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    // Weather
+    "custom/weather": {
+    "format": "{} °  ",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar",
+    "return-type": "json"
+    },
+
+    // Bluetooth
+    "bluetooth": {
+        "format-disabled": "",
+        "format-off": "",
+        "interval": 30,
+        "on-click": "blueman-manager"
+    },
+
+    // Other
+    "user": {
+        "format": "{user}",
+        "interval": 60,
+        "icon": false,
+    }
+}
