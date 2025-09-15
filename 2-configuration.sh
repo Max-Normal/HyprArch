@@ -35,7 +35,7 @@ pacman -Syy
 # ------------------------------------------------------
 # Install Packages
 # ------------------------------------------------------
-pacman --noconfirm -S grub xdg-desktop-portal-wlr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups cups-pdf print-manager alsa-utils pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber bash-completion rsync reflector acpi acpi_call dnsmasq openbsd-netcat ipset firewalld flatpak sof-firmware nss-mdns acpid os-prober ntfs-3g terminus-font exa bat htop ranger zip unzip neofetch duf xorg-xhost xorg-xwayland grub-btrfs xf86-video-intel xf86-video-qxl brightnessctl pacman-contrib inxi tlp inotify-tools
+pacman --noconfirm -S grub xdg-desktop-portal-wlr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups cups-pdf print-manager alsa-utils pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber bash-completion rsync reflector acpi acpi_call dnsmasq openbsd-netcat ipset firewalld flatpak sof-firmware nss-mdns acpid os-prober ntfs-3g terminus-font exa bat htop ranger zip unzip duf xorg-xhost xorg-xwayland grub-btrfs xf86-video-intel xf86-video-qxl brightnessctl pacman-contrib inxi tlp inotify-tools
 
 # ------------------------------------------------------
 # set lang utf8 US
